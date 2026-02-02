@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About K F Fresh Fruits & Foods</title>
+
+<!-- FontAwesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body{
+  background:#f6f9fc;
+  color:#333;
+}
+
+/* HEADER */
+.main-header{
+  background:#2e7d32;
+  color:white;
+  padding:15px 0;
+}
+.main-header .container{
+  width:90%;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.main-header h2{
+  font-size:24px;
+}
+.main-header nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:20px;
+  font-weight:500;
+}
+.main-header nav a:hover{
+  text-decoration:underline;
+}
+
+/* HERO */
+.page-hero{
+  background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+  url('f2.jpg');
+  background-size:cover;
+  background-position:center;
+  color:white;
+  text-align:center;
+  padding:90px 20px;
+}
+.page-hero h1{
+  font-size:42px;
+}
+.page-hero p{
+  margin-top:15px;
+  font-size:18px;
+}
+
+/* SECTIONS */
+section{
+  padding:60px 0;
+}
+.container{
+  width:90%;
+  margin:auto;
+}
+.section-title{
+  text-align:center;
+  font-size:32px;
+  margin-bottom:40px;
+  color:#2e7d32;
+}
+
+/* STORY */
+.story-content{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
+}
+.story-text h2{
+  color:#2e7d32;
+  margin-bottom:15px;
+}
+.story-text p{
+  margin-bottom:15px;
+  line-height:1.7;
+}
+.achievements{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+  margin-top:20px;
+}
+.achievement{
+  background:white;
+  padding:15px;
+  border-radius:8px;
+  text-align:center;
+  box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+.achievement h3{
+  color:#2e7d32;
+}
+.story-image img{
+  width:100%;
+  border-radius:12px;
+}
+.founder-info{
+  background:white;
+  padding:15px;
+  border-radius:8px;
+  margin-top:10px;
+  text-align:center;
+  box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* VALUES */
+.values-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+}
+.value-card{
+  background:white;
+  padding:25px;
+  border-radius:10px;
+  text-align:center;
+  box-shadow:0 5px 20px rgba(0,0,0,0.06);
+  transition:0.3s;
+}
+.value-card:hover{
+  transform:translateY(-6px);
+}
+.value-icon{
+  font-size:40px;
+  color:#2e7d32;
+  margin-bottom:10px;
+}
+
+/* PROCESS */
+.process-timeline{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+.process-step{
+  background:white;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 5px 20px rgba(0,0,0,0.06);
+}
+.step-number{
+  font-size:26px;
+  font-weight:bold;
+  color:#2e7d32;
+}
+.process-step img{
+  width:100%;
+  border-radius:8px;
+  margin-top:10px;
+}
+
+/* TEAM */
+.team-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:25px;
+}
+.team-member{
+  background:white;
+  padding:15px;
+  border-radius:10px;
+  text-align:center;
+  box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+.team-member img{
+  width:100%;
+  border-radius:10px;
+}
+
+/* TESTIMONIALS */
+.testimonial{
+  background:white;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 5px 20px rgba(0,0,0,0.06);
+  margin-bottom:20px;
+}
+.testimonial-author{
+  display:flex;
+  align-items:center;
+  margin-top:15px;
+}
+.testimonial-author img{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  margin-right:10px;
+}
+
+/* FOOTER */
+.main-footer{
+  background:#1b5e20;
+  color:white;
+  text-align:center;
+  padding:20px;
+  margin-top:40px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .story-content{
+    grid-template-columns:1fr;
+  }
+  .achievements{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+
+
+
+/* ========================= */
+/* 🌍 GLOBAL RESPONSIVENESS */
+/* ========================= */
+
+/* Make images & sections fluid */
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Better container scaling */
+.container{
+  width: min(92%, 1200px);
+}
+
+/* HERO */
+.hero-slider{
+  height: 70vh;
+}
+@media(max-width: 768px){
+  .hero-slider{
+    height: 60vh;
+  }
+}
+@media(max-width: 480px){
+  .hero-slider{
+    height: 55vh;
+  }
+}
+
+/* SLIDE CONTENT */
+.slide-content{
+  max-width: 500px;
+}
+@media(max-width: 768px){
+  .slide-content{
+    max-width: 90%;
+    margin: auto;
+    text-align: center;
+  }
+  .slide-content h2{
+    font-size: 1.5rem;
+  }
+}
+
+/* HEADER */
+@media(max-width: 900px){
+  .main-header .container{
+    flex-direction: column;
+    gap: 10px;
+  }
+  .main-header nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .main-header nav a{
+    margin: 8px 12px;
+    font-size: 15px;
+  }
+}
+
+/* CATEGORIES */
+.categories-grid{
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+.category-card img{
+  height: 180px;
+}
+@media(max-width: 480px){
+  .category-card img{
+    height: 150px;
+  }
+}
+
+/* PRODUCTS */
+.products-grid{
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
+/* HOW IT WORKS */
+.steps-grid{
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+
+/* FOOTER */
+.footer-grid{
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+@media(max-width: 600px){
+  .footer-col{
+    text-align: center;
+  }
+  .footer-social{
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* BUTTONS */
+@media(max-width: 480px){
+  .btn-primary,
+  .btn-secondary,
+  .btn-category{
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+/* TEXT SIZES */
+@media(max-width: 480px){
+  h2{font-size: 1.3rem;}
+  h3{font-size: 1.1rem;}
+  p{font-size: 14px;}
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header class="main-header">
+  <div class="container">
+    <h2>K F Fresh Fruits & Foods</h2>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about us.html">About Us</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <h1>About K F Fresh Fruits & Foods</h1>
+    <p>Connecting Ugandan farmers with quality-conscious customers since 2020</p>
+  </div>
+</section>
+
+<section class="our-story">
+<div class="container">
+<div class="story-content">
+
+<div class="story-text">
+<h2>Our Story</h2>
+<p>Founded in 2020 by <strong>Kasamba Francis</strong>, K F Fresh Fruits & Foods began as a small roadside stall in Maganjo.</p>
+<p>Our mission is to bridge the gap between local farmers and urban consumers.</p>
+
+<div class="achievements">
+  <div class="achievement"><h3>5000+</h3><p>Happy Customers</p></div>
+  <div class="achievement"><h3>150+</h3><p>Local Farmers</p></div>
+  <div class="achievement"><h3>100+</h3><p>Products</p></div>
+  <div class="achievement"><h3>4 Years</h3><p>Trust</p></div>
+</div>
+</div>
+
+<div class="story-image">
+<img src="ceo.jpeg">
+<div class="founder-info">
+<h4>Kasamba Francis</h4>
+<p>Founder & CEO</p>
+<p><i class="fas fa-phone"></i> +256 703 535 707</p>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="our-values">
+<div class="container">
+<h2 class="section-title">Our Core Values</h2>
+<div class="values-grid">
+
+<div class="value-card"><div class="value-icon"><i class="fas fa-leaf"></i></div><h3>Freshness</h3><p>Direct farm sourcing daily.</p></div>
+<div class="value-card"><div class="value-icon"><i class="fas fa-handshake"></i></div><h3>Fair Trade</h3><p>Fair farmer pricing.</p></div>
+<div class="value-card"><div class="value-icon"><i class="fas fa-truck"></i></div><h3>Delivery</h3><p>Fast Kampala delivery.</p></div>
+<div class="value-card"><div class="value-icon"><i class="fas fa-users"></i></div><h3>Community</h3><p>Community empowerment.</p></div>
+
+</div>
+</div>
+</section>
+
+<section class="our-process">
+<div class="container">
+<h2 class="section-title">From Farm to Table</h2>
+
+<div class="process-timeline">
+<div class="process-step"><div class="step-number">01</div><h3>Farm Selection</h3><p>Trusted farmers</p></div>
+<div class="process-step"><div class="step-number">02</div><h3>Quality Check</h3><p>Strict inspection</p></div>
+<div class="process-step"><div class="step-number">03</div><h3>Transport</h3><p>Fast delivery</p></div>
+<div class="process-step"><div class="step-number">04</div><h3>Delivery</h3><p>Doorstep service</p></div>
+</div>
+
+</div>
+</section>
+
+<section class="team-section">
+<div class="container">
+<h2 class="section-title">Meet Our Team</h2>
+
+<div class="team-grid">
+<div class="team-member"><h4>Kasamba Francis</h4><p>Founder & CEO</p></div>
+<div class="team-member"><h4>Nakato Sarah</h4><p>Sales Manager</p></div>
+<div class="team-member"><h4>Okello David</h4><p>Quality Control</p></div>
+<div class="team-member"><h4>Mugisha Joseph</h4><p>Delivery Manager</p></div>
+</div>
+
+</div>
+</section>
+
+<section class="testimonials">
+<div class="container">
+<h2 class="section-title">What Our Customers Say</h2>
+
+<div class="testimonial">
+<p>"The freshest mangoes I've ever tasted!"</p>
+<div class="testimonial-author"><div><h4>Jane Nalwoga</h4><p>Customer</p></div></div>
+</div>
+
+<div class="testimonial">
+<p>"Reliable supply for my restaurant."</p>
+<div class="testimonial-author"><div><h4>Robert Kimuli</h4><p>Restaurant Owner</p></div></div>
+</div>
+
+</div>
+</section>
+
+
+<script>
+document.querySelector(".menu-toggle").onclick = function(){
+  const nav = document.querySelector(".nav-links");
+  nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+};
+</script>
+
+
+
+
+
+
+
+
+
+
+<footer class="main-footer">
+<p>&copy; 2026 K F Fresh Fruits & Foods | Uganda</p>
+</footer>
+
+</body>
+</html>

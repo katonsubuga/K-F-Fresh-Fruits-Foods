@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | K F Fresh Fruits & Foods</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Segoe UI",Arial,sans-serif;
+}
+
+body{
+  background:#f5f8fb;
+  color:#333;
+}
+
+/* HEADER */
+header{
+  background:#2e7d32;
+  color:white;
+  padding:15px 0;
+}
+header .container{
+  width:90%;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+header nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:20px;
+  font-weight:500;
+}
+
+/* HERO */
+.page-hero{
+  background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+  url('f2.jpg');
+  background-size:cover;
+  background-position:center;
+  text-align:center;
+  color:white;
+  padding:80px 20px;
+}
+.page-hero h1{font-size:42px;}
+.page-hero p{margin-top:10px;font-size:18px;}
+
+/* CONTAINER */
+.container{
+  width:90%;
+  margin:auto;
+}
+
+/* CONTACT SECTION */
+.contact-section{
+  padding:60px 0;
+}
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+}
+
+/* CONTACT INFO */
+.contact-info{
+  background:white;
+  padding:30px;
+  border-radius:15px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+.contact-info h2{
+  color:#2e7d32;
+  margin-bottom:15px;
+}
+.info-item{
+  display:flex;
+  align-items:center;
+  margin:15px 0;
+  font-size:16px;
+}
+.info-item span{
+  font-size:22px;
+  margin-right:12px;
+}
+
+/* FORM */
+.contact-form{
+  background:white;
+  padding:30px;
+  border-radius:15px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+.contact-form h2{
+  color:#2e7d32;
+  margin-bottom:15px;
+}
+.form-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+  margin-bottom:15px;
+}
+.contact-form input,
+.contact-form textarea,
+.contact-form select{
+  width:100%;
+  padding:12px;
+  border-radius:8px;
+  border:1px solid #ccc;
+  outline:none;
+}
+.contact-form textarea{
+  resize:none;
+}
+.submit-btn{
+  width:100%;
+  padding:12px;
+  background:#2e7d32;
+  color:white;
+  border:none;
+  border-radius:8px;
+  font-size:16px;
+  cursor:pointer;
+  margin-top:10px;
+}
+.submit-btn:hover{
+  background:#1b5e20;
+}
+
+/* SUCCESS MESSAGE */
+.success-msg{
+  display:none;
+  margin-top:15px;
+  text-align:center;
+  color:green;
+  font-weight:bold;
+}
+
+/* FOOTER */
+footer{
+  background:#1b5e20;
+  color:white;
+  text-align:center;
+  padding:20px;
+  margin-top:50px;
+}
+
+/* RESPONSIVE */
+@media(max-width:800px){
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+  .form-row{
+    grid-template-columns:1fr;
+  }
+}
+
+
+/* SLIDE CONTENT */
+.slide-content{
+  max-width: 500px;
+}
+@media(max-width: 768px){
+  .slide-content{
+    max-width: 90%;
+    margin: auto;
+    text-align: center;
+  }
+  .slide-content h2{
+    font-size: 1.5rem;
+  }
+}
+
+/* HEADER */
+@media(max-width: 900px){
+  .main-header .container{
+    flex-direction: column;
+    gap: 10px;
+  }
+  .main-header nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .main-header nav a{
+    margin: 8px 12px;
+    font-size: 15px;
+  }
+}
+
+
+
+
+  /* ===== SELLER ===== */
+        .seller-section {
+            background: #2f6b2f;
+            color: #fff;
+            padding: 60px 0;
+        }
+
+        .seller-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .seller-form {
+            background: #fff;
+            color: #333;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        .seller-form input,
+        .seller-form select,
+        .seller-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+
+
+.seller-form input[type="file"]{
+  border:1px dashed #ccc;
+  padding:10px;
+  background:#f9f9f9;
+  cursor:pointer;
+}
+
+@media (max-width: 575.98px){
+...
+}
+
+@media (min-width: 768px) and (max-with: 991.98px){
+...
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px){
+...
+}
+
+@media (min-width: 1200px){
+...
+}
+
+
+
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <h2>K F Fresh Fruits & Foods</h2>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about us.html">About Us</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact</a>
+
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <h1>Contact Us</h1>
+    <p>We are always ready to serve you fresh and healthy food</p>
+  </div>
+</section>
+
+<section class="contact-section">
+<div class="container">
+<div class="contact-grid">
+
+<!-- CONTACT INFO -->
+<div class="contact-info">
+  <h2>Get in Touch</h2>
+
+  <div class="info-item">
+    <span>📍</span>
+    <p>Maganjo, Kampala, Uganda</p>
+  </div>
+
+  <div class="info-item">
+    <span>📞</span>
+    <p>+256 703 535 707</p>
+  </div>
+
+  <div class="info-item">
+    <span>📧</span>
+    <p>katoabdul737@gmail.com</p>
+  </div>
+
+  <div class="info-item">
+    <span>⏰</span>
+    <p>Open 24 Hours</p>
+  </div>
+
+  <div class="info-item">
+    <span>💬</span>
+    <p>
+      WhatsApp Orders: 
+      <a href="https://wa.me/256703535707" target="_blank">Chat Now</a>
+    </p>
+  </div>
+ <span><i class="fas fa-parking"></i> Parking Available</span>
+ <span><i class="fas fa-truck"></i> Free Delivery Nearby</span>
+ <span><i class="fas fa-credit-card"></i> Cash on Delivery</span>
+
+</div>
+
+<!-- FORM -->
+<div class="contact-form">
+  <h2>Send Message / Place Order</h2>
+
+  <form id="contactForm">
+
+    <div class="form-row">
+      <input type="text" id="name" placeholder="Full Name" required>
+      <input type="tel" id="phone" placeholder="Phone Number" required>
+    </div>
+
+    <div class="form-row">
+      <input type="email" id="email" placeholder="Email Address" required>
+      <input type="text" id="location" placeholder="Delivery Location" required>
+    </div>
+
+    <select id="purpose" required>
+      <option value="">Select a Product</option>
+      <option>Matooke</option>
+      <option>Rice(All types)</option>
+      <option>Irishpotatoes</option>
+      <option>Sweetpotatoes</option>
+      <option>Yams</option>
+      <option>Mangoes</option>
+      <option>Bananas</option>
+      <option>Oranges</option>
+      <option>Onions</option>
+      <option>Tomatoes</option>
+      <option>Maize</option>
+      <option> Groungnuts</option>
+      <option>Tomatoes</option>
+      <option>General Inquiry</option>
+    </select>
+
+    <textarea id="message" rows="5" placeholder="Your message or order details..." required></textarea>
+
+    <button type="submit" class="submit-btn">Send Message</button>
+
+    <div class="success-msg" id="successMsg">
+      ✅ Message sent successfully! Seller has been notified via WhatsApp & Email.
+    </div>
+
+  </form>
+</div>
+
+</div>
+</div>
+</section>
+
+
+  <!-- Seller Section -->
+    <section class="seller-section" id="seller">
+    <div class="seller-form" id="seller-register">
+
+        <div class="container">
+            <div class="seller-content">
+                <div class="seller-info">
+                    <h2>Sell Your Produce With Us</h2>
+                    <p>Are you a farmer or food supplier? Join our network and sell your fresh produce directly to customers through our platform.</p>
+                    <ul class="seller-benefits">
+                        <li><i class="fas fa-check-circle"></i> No upfront costs</li>
+                        <li><i class="fas fa-check-circle"></i> Wider customer reach</li>
+                        <li><i class="fas fa-check-circle"></i> Fast payment processing</li>
+                        <li><i class="fas fa-check-circle"></i> Marketing support</li>
+                    </ul>
+                    <div class="seller-contact">
+                        <h4>Contact Seller Manager:</h4>
+                        <p><strong>Kasamba Francis</strong></p>
+                        <p><i class="fas fa-phone"></i> +256 703 535 707</p>
+                        <p><i class="fas fa-envelope"></i> francis@kffreshfruits.com</p>
+                    </div>
+                </div>
+<form id="seller-registration" enctype="multipart/form-data">
+    <input type="text" name="name" placeholder="Full Name" required>
+    <input type="tel" name="phone" placeholder="Phone Number" required>
+    <input type="email" name="email" placeholder="Email Address">
+
+    <select name="product" required>
+        <option value="">Product Type</option>
+        <option>Fresh Fruits</option>
+        <option>Vegetables</option>
+        <option>Grains & Cereals</option>
+        <option>Other Foods</option>
+    </select>
+
+    <textarea name="description" placeholder="Describe your products..." rows="3"></textarea>
+
+    <label><strong>Upload Photos / Documents</strong></label>
+    <input type="file" name="files" multiple required>
+
+    <button type="submit" class="btn-primary">Submit Application</button>
+</form>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+<footer>
+<p>&copy; 2026 K F Fresh Fruits & Foods | Uganda</p>
+</footer>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const phone = document.getElementById("phone").value;
+  const email = document.getElementById("email").value;
+  const location = document.getElementById("location").value;
+  const purpose = document.getElementById("purpose").value;
+  const message = document.getElementById("message").value;
+
+  const fullMessage =
+`NEW CONTACT / ORDER - K F FRESH FRUITS & FOODS
+
+Name: ${name}
+Phone: ${phone}
+Email: ${email}
+Location: ${location}
+Purpose: ${purpose}
+
+Message:
+${message}`;
+
+  /* WhatsApp */
+  window.open(
+    "https://wa.me/256703535707?text=" + encodeURIComponent(fullMessage),
+    "_blank"
+  );
+
+  /* Email */
+  window.location.href =
+    "mailto:katoabdul737@gmail.com?subject=New Contact / Order&body=" +
+    encodeURIComponent(fullMessage);
+
+  document.getElementById("successMsg").style.display="block";
+  this.reset();
+});
+</script>
+
+
+
+
+<script>
+document.getElementById("seller-registration").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const form = this;
+  const name = form.name.value;
+  const phone = form.phone.value;
+  const email = form.email.value;
+  const product = form.product.value;
+  const description = form.description.value;
+
+  /* =====================
+     WHATSAPP MESSAGE
+  ===================== */
+  const whatsappMsg = `
+NEW SELLER APPLICATION – K F FRESH FRUITS & FOODS
+
+Name: ${name}
+Phone: ${phone}
+Email: ${email}
+Product Type: ${product}
+
+Description:
+${description}
+
+📎 Attachments sent via Email
+`;
+
+  window.open(
+    "https://wa.me/256703535707?text=" + encodeURIComponent(whatsappMsg),
+    "_blank"
+  );
+
+  /* =====================
+     EMAIL WITH ATTACHMENTS
+  ===================== */
+  emailjs.sendForm(
+    "YOUR_SERVICE_ID",
+    "YOUR_TEMPLATE_ID",
+    form
+  ).then(
+    function(){
+      alert("✅ Application sent successfully via WhatsApp & Email");
+      form.reset();
+    },
+    function(error){
+      alert("Email failed. Try again.");
+      console.error(error);
+    }
+  );
+});
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+(function(){
+  emailjs.init("YOUR_PUBLIC_KEY"); // <-- from EmailJS
+})();
+</script>
+
+</body>
+</html>

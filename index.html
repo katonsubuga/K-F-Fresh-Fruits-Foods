@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+    <title>K F Fresh Fruits & Foods</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+
+    <style>
+        /* ===== RESET & GLOBAL ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #f6f8f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #2f6b2f;
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn-primary,
+        .btn-secondary,
+        .btn-category,
+        .btn-order {
+            display: inline-block;
+            padding: 10px 22px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #2f8f2f;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: #256f25;
+        }
+
+        .btn-secondary {
+            background: #fff;
+            color: #2f8f2f;
+            border: 2px solid #2f8f2f;
+        }
+
+        .btn-secondary:hover {
+            background: #2f8f2f;
+            color: #fff;
+        }
+
+        .btn-category {
+            background: #e8f5e8;
+            color: #2f6b2f;
+        }
+
+        .btn-category:hover {
+            background: #2f6b2f;
+            color: #fff;
+        }
+
+        /* ===== HEADER ===== */
+        .main-header {
+            background: #fff;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .contact-info span {
+            margin-right: 15px;
+        }
+
+        .social-links a {
+            margin-left: 10px;
+            color: #2f8f2f;
+        }
+
+       
+        /* ===== HERO SLIDER ===== */
+        .hero-slider {
+            height: 70vh;
+        }
+
+        .swiper-slide {
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+        }
+
+        .slide-content {
+            background: rgba(0,0,0,0.55);
+            color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            margin-left: 5%;
+            max-width: 450px;
+        }
+
+        .slide-content h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        /* ===== CATEGORIES ===== */
+        .featured-categories {
+            padding: 60px 0;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .category-card {
+            background: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .category-card h3 {
+            margin: 10px 0;
+            color: #2f6b2f;
+        }
+
+        /* ===== PRODUCTS ===== */
+        .featured-products {
+            padding: 60px 0;
+            background: #eef5ee;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        /* ===== HOW IT WORKS ===== */
+        .how-it-works {
+            padding: 60px 0;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .step-icon {
+            width: 45px;
+            height: 45px;
+            margin: auto;
+            background: #2f8f2f;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* ===== SELLER ===== */
+        .seller-section {
+            background: #2f6b2f;
+            color: #fff;
+            padding: 60px 0;
+        }
+
+        .seller-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .seller-form {
+            background: #fff;
+            color: #333;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        .seller-form input,
+        .seller-form select,
+        .seller-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        /* ===== LOCATION ===== */
+        .location-section {
+            padding: 60px 0;
+        }
+
+        .location-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        #map {
+            width: 100%;
+            height: 300px;
+            background: #ddd;
+            border-radius: 10px;
+        }
+
+        /* ===== FOOTER ===== */
+        .main-footer {
+            background: #1f3f1f;
+            color: #fff;
+            padding: 40px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 10px;
+            color: #9fe09f;
+        }
+
+        .footer-social a {
+            margin-right: 10px;
+            color: #9fe09f;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 10px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .seller-content,
+            .location-content {
+                grid-template-columns: 1fr;
+            }
+
+            .slide-content {
+                margin: 20px;
+            }
+        }
+
+/*resizing the images*/
+.categories-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+    gap:25px;
+}
+
+.category-card{
+    background:#fff;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    text-align:center;
+    transition:0.3s;
+}
+
+.category-card:hover{
+    transform:translateY(-6px);
+}
+
+/* 🔥 IMAGE STANDARD SIZE */
+.category-card img{
+    width:100%;
+    height:200px;        /* SAME HEIGHT */
+    object-fit:cover;   /* CROPS PROPERLY */
+    display:block;
+}
+
+/* TEXT STYLING */
+.category-card h3{
+    margin:12px 0 5px;
+    color:#2e7d32;
+}
+
+.category-card p{
+    font-size:14px;
+    color:#555;
+    padding:0 10px;
+}
+
+.btn-category{
+    display:inline-block;
+    margin:12px 0 15px;
+    padding:8px 16px;
+    background:#2e7d32;
+    color:white;
+    text-decoration:none;
+    border-radius:20px;
+    font-size:14px;
+    transition:.3s;
+}
+
+.btn-category:hover{
+    background:#1b5e20;
+}
+
+
+
+/* HEADER */
+.main-header{
+  background:#2e7d32;
+  color:white;
+  padding:15px 0;
+}
+.main-header .container{
+  width:90%;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.main-header h2{
+  font-size:24px;
+}
+.main-header nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:20px;
+  font-weight:500;
+}
+.main-header nav a:hover{
+  text-decoration:underline;
+}
+
+/* ========================= */
+/* 🌍 GLOBAL RESPONSIVENESS */
+/* ========================= */
+
+/* Make images & sections fluid */
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Better container scaling */
+.container{
+  width: min(92%, 1200px);
+}
+
+/* HERO */
+.hero-slider{
+  height: 70vh;
+}
+@media(max-width: 768px){
+  .hero-slider{
+    height: 60vh;
+  }
+}
+@media(max-width: 480px){
+  .hero-slider{
+    height: 55vh;
+  }
+}
+
+/* SLIDE CONTENT */
+.slide-content{
+  max-width: 500px;
+}
+@media(max-width: 768px){
+  .slide-content{
+    max-width: 90%;
+    margin: auto;
+    text-align: center;
+  }
+  .slide-content h2{
+    font-size: 1.5rem;
+  }
+}
+
+/* HEADER */
+@media(max-width: 900px){
+  .main-header .container{
+    flex-direction: column;
+    gap: 10px;
+  }
+  .main-header nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .main-header nav a{
+    margin: 8px 12px;
+    font-size: 15px;
+  }
+}
+
+/* CATEGORIES */
+.categories-grid{
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+.category-card img{
+  height: 180px;
+}
+@media(max-width: 480px){
+  .category-card img{
+    height: 150px;
+  }
+}
+
+/* PRODUCTS */
+.products-grid{
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
+/* HOW IT WORKS */
+.steps-grid{
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+
+/* FOOTER */
+.footer-grid{
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+@media(max-width: 600px){
+  .footer-col{
+    text-align: center;
+  }
+  .footer-social{
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* BUTTONS */
+@media(max-width: 480px){
+  .btn-primary,
+  .btn-secondary,
+  .btn-category{
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+/* TEXT SIZES */
+@media(max-width: 480px){
+  h2{font-size: 1.3rem;}
+  h3{font-size: 1.1rem;}
+  p{font-size: 14px;}
+}
+
+    </style>
+
+</head>
+<body>
+ 
+<header class="main-header">
+  <div class="container">
+    <h2>K F Fresh Fruits & Foods</h2>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about us.html">About Us</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact</a>
+     <a href="contact.html#seller-register">Sell With Us</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO SLIDER -->
+<section class="hero-slider">
+<div class="swiper mySwiper">
+<div class="swiper-wrapper">
+
+<div class="swiper-slide" style="background-image:url('f2.jpg')">
+<div class="slide-content">
+<h2>Fresh Tropical Fruits Daily</h2>
+<p>Direct from Ugandan farms to your table</p>
+<a href="#" class="btn-primary">Shop Now</a>
+</div>
+</div>
+
+<div class="swiper-slide" style="background-image:url('cg.jpg')">
+<div class="slide-content">
+<h2>Organic Vegetables & Foods</h2>
+<p>100% natural produce</p>
+<a href="#" class="btn-primary">Shop Vegetables</a>
+</div>
+</div>
+
+<div class="swiper-slide" style="background-image:url('ct.jpg')">
+<div class="slide-content">
+<h2>Home Delivery Available</h2>
+<p>Free delivery within Kampala</p>
+<a href="#" class="btn-primary">Order Now</a>
+</div>
+</div>
+
+</div>
+<div class="swiper-pagination"></div>
+<div class="swiper-button-next"></div>
+<div class="swiper-button-prev"></div>
+</div>
+</section>
+
+    <!-- Featured Categories -->
+    <section class="featured-categories">
+        <div class="container">
+            <h2 class="section-title">Our Fresh Categories</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <img src="bb1.jpg">
+                    <h3>Foods</h3>
+                    <p> Bananas,Cassava,Sweet potaoes, etc.</p>
+                    <a href="products.html?category=food" class="btn-category">View All</a>
+                </div>
+                <div class="category-card">
+                    <img src="cg.jpg">
+                    <h3>Vegetables</h3>
+                    <p>Cabbages,Carrots,etc</p>
+                    <a href="products.html?category=vegetables" class="btn-category">View All</a>
+                </div>
+                <div class="category-card">
+                    <img src="r.jpg">
+                    <h3>Grains</h3>
+                    <p>Maize, Rice, Millet, etc.</p>
+                    <a href="products.html?category=grains" class="btn-category">View All</a>
+                </div>
+                <div class="category-card">
+                    <img src="wm.jpg">
+                    <h3>Fruits</h3>
+                    <p>Tomatoes,Greenpaper,Eggplant,ect</p>
+                    <a href="products.html?category=fruits" class="btn-category">View All</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="container">
+            <h2 class="section-title">Today's Fresh Picks</h2>
+            <div class="products-grid" id="products-container">
+                <!-- Products will be loaded dynamically -->
+            </div>
+            <div class="text-center">
+                <a href="products.html" class="btn-secondary">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How To Order</h2>
+            <div class="steps-grid">
+                <div class="step">
+                    <div class="step-icon">1</div>
+                    <h3>Browse Products</h3>
+                    <p>Select from our fresh fruits and foods</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">2</div>
+                    <h3>Add to Cart</h3>
+                    <p>Choose quantities and add to cart</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">3</div>
+                    <h3>Place Order</h3>
+                    <p>Fill delivery details</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">4</div>
+                    <h3>Pay on Delivery</h3>
+                    <p>Pay when your order arrives</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  
+
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        
+                        <h3>K F Fresh Fruits & Foods</h3>
+                    </div>
+                    <p>Providing fresh, quality fruits and foods directly from Ugandan farms to your table since 2020.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#index.html">Home</a></li>
+                        <li><a href="#about.html">About Us</a></li>
+                        <li><a href="#products.html">Products</a></li>
+                        <li><a href="#contact.html">Contact</a></li>
+                        <li><a href="#seller">Sell With Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Categories</h4>
+                    <ul>
+                        <a href="#">Foods</a>
+                        <a href="#">Vegetables</a>
+                        <a href="#">Grains</a>
+                        <a href="#"> Fruits</a>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-map-marker-alt"></i> Maganjo, Alongside Total</li>
+                        <li>
+                     <i class="fas fa-phone"></i> 
+                      <a href="tel:+256703535707" style="color:inherit; text-decoration:none;">
+                       +256 703 535 707
+                        </a>
+                        </li>
+
+                        <li><i class="fas fa-envelope"></i> info@kffreshfruits.com</li>
+                        <li><i class="fas fa-clock"></i>24/7</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 K F Fresh Fruits & Foods. All rights reserved.</p>
+                <p>Designed with <i class="fas fa-heart"></i> for Uganda's Fresh Produce</p>
+            </div>
+        </div>
+    </footer>
+
+<!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <script src="js/main.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/cart.js"></script>
+
+<script>
+/* ===== ACTIVATE HERO SLIDER ===== */
+const swiper = new Swiper(".mySwiper", {
+    loop: true,                 // infinite loop
+    autoplay: {
+        delay: 4000,            // 4 seconds per slide
+        disableOnInteraction: false
+    },
+    speed: 1000,                // smooth transition
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+    },
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+    },
+    effect: "slide",            // slide motion
+    grabCursor: true
+});
+</script>
+
+
+
+<script>
+document.querySelector(".menu-toggle").onclick = function(){
+  const nav = document.querySelector(".nav-links");
+  nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+};
+</script>
+
+
+
+
+</body>
+</html>
