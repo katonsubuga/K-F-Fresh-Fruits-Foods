@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,129 +16,152 @@
 body{
   background:#f5f8fb;
   color:#333;
+  overflow-x:hidden;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 header{
   background:#2e7d32;
   color:white;
   padding:15px 0;
 }
+
 header .container{
   width:90%;
   margin:auto;
   display:flex;
   justify-content:space-between;
   align-items:center;
+  flex-wrap:wrap;
 }
-header nav a{
+
+header h2{
+  font-size:22px;
+}
+
+nav{
+  display:flex;
+  gap:20px;
+}
+
+nav a{
   color:white;
   text-decoration:none;
-  margin-left:20px;
   font-weight:500;
 }
 
-/* HERO */
+/* MOBILE MENU */
+.menu-toggle{
+  display:none;
+  font-size:26px;
+  cursor:pointer;
+}
+
+/* ================= HERO ================= */
 .page-hero{
   background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
-  url('f2.jpg');
-  background-size:cover;
-  background-position:center;
+  url('f2.jpg') center/cover no-repeat;
   text-align:center;
   color:white;
-  padding:80px 20px;
+  padding:70px 15px;
 }
-.page-hero h1{font-size:42px;}
-.page-hero p{margin-top:10px;font-size:18px;}
 
-/* SECTIONS */
+.page-hero h1{font-size:36px;}
+.page-hero p{margin-top:10px;font-size:16px;}
+
+/* ================= SECTIONS ================= */
 .container{
   width:90%;
+  max-width:1200px;
   margin:auto;
 }
+
 .section-title{
   text-align:center;
-  font-size:32px;
+  font-size:30px;
   margin:40px 0;
   color:#2e7d32;
 }
 
-/* PRODUCTS HEADER */
+/* ================= PRODUCTS HEADER ================= */
 .products-header{
   display:flex;
   justify-content:space-between;
-  align-items:center;
   flex-wrap:wrap;
+  gap:15px;
   margin:30px 0;
 }
+
 .products-filter{
   display:flex;
   flex-wrap:wrap;
   gap:10px;
 }
+
 .filter-btn{
-  padding:8px 15px;
+  padding:8px 14px;
   border:none;
   border-radius:20px;
   cursor:pointer;
   background:#e0e0e0;
 }
+
 .filter-btn.active{
   background:#2e7d32;
   color:white;
 }
+
 .products-sort select{
   padding:8px;
   border-radius:6px;
 }
 
-/* PRODUCTS GRID */
+/* ================= PRODUCTS GRID ================= */
 .products-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:25px;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
 }
+
 .product-card{
   background:white;
   border-radius:12px;
   box-shadow:0 5px 15px rgba(0,0,0,0.08);
   overflow:hidden;
-  transition:.3s;
   cursor:pointer;
+  transition:.3s;
 }
+
 .product-card:hover{
-  transform:translateY(-6px);
+  transform:translateY(-5px);
 }
+
 .product-card img{
   width:100%;
   height:160px;
   object-fit:cover;
 }
+
 .product-card .info{
   padding:15px;
 }
-.product-card h4{
-  color:#2e7d32;
-}
-.product-card p{
-  font-size:14px;
-  margin:5px 0;
-}
+
 .price{
   font-weight:bold;
   color:#1b5e20;
 }
 
-/* MODAL */
+/* ================= MODAL ================= */
 .modal{
   display:none;
   position:fixed;
-  top:0;left:0;
-  width:100%;height:100%;
+  inset:0;
   background:rgba(0,0,0,0.6);
   justify-content:center;
   align-items:center;
+  z-index:1000;
 }
+
 .modal-content{
   background:white;
   width:90%;
@@ -149,30 +170,39 @@ header nav a{
   border-radius:10px;
   position:relative;
 }
+
 .close-modal{
   position:absolute;
-  top:10px;right:15px;
+  top:10px;
+  right:15px;
   font-size:24px;
   cursor:pointer;
 }
 
-/* PRICING TABLE */
+/* ================= PRICING TABLE ================= */
+.pricing-table{
+  overflow-x:auto;
+}
+
 .pricing-table table{
   width:100%;
+  min-width:600px;
   border-collapse:collapse;
   background:white;
-  box-shadow:0 5px 15px rgba(0,0,0,0.05);
 }
+
 .pricing-table th,
 .pricing-table td{
   padding:12px;
   text-align:center;
   border-bottom:1px solid #eee;
 }
+
 .pricing-table th{
   background:#2e7d32;
   color:white;
 }
+
 .order-btn{
   padding:6px 12px;
   background:#2e7d32;
@@ -182,23 +212,42 @@ header nav a{
   cursor:pointer;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 footer{
   background:#1b5e20;
   color:white;
   text-align:center;
   padding:20px;
-  margin-top:50px;
+  margin-top:40px;
 }
 
-/* RESPONSIVE */
-@media(max-width:700px){
+/* ================= RESPONSIVE ================= */
+@media(max-width:768px){
+  nav{
+    display:none;
+    flex-direction:column;
+    width:100%;
+    background:#2e7d32;
+    margin-top:10px;
+  }
+
+  nav.show{
+    display:flex;
+  }
+
+  .menu-toggle{
+    display:block;
+  }
+
+  .page-hero h1{
+    font-size:28px;
+  }
+
   .products-header{
     flex-direction:column;
-    gap:15px;
+    align-items:flex-start;
   }
 }
-
 </style>
 </head>
 
@@ -207,8 +256,9 @@ footer{
 <header>
   <div class="container">
     <h2>K F Fresh Fruits & Foods</h2>
-    <nav>
-       <a href="index.html">Home</a>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <nav id="navMenu">
+      <a href="index.html">Home</a>
       <a href="about us.html">About Us</a>
       <a href="products.html">Products</a>
       <a href="contact.html">Contact</a>
@@ -217,10 +267,8 @@ footer{
 </header>
 
 <section class="page-hero">
-  <div class="container">
-    <h1>Our Fresh Products</h1>
-    <p>Quality fruits and foods at competitive prices</p>
-  </div>
+  <h1>Our Fresh Products</h1>
+  <p>Quality fruits and foods at competitive prices</p>
 </section>
 
 <section class="products-page">
@@ -248,7 +296,6 @@ footer{
 
 <div class="products-grid" id="products-grid"></div>
 
-<!-- MODAL -->
 <div id="product-modal" class="modal">
   <div class="modal-content">
     <span class="close-modal" onclick="closeModal()">&times;</span>
@@ -262,7 +309,6 @@ footer{
 <section class="pricing-section">
 <div class="container">
 <h2 class="section-title">Current Prices</h2>
-
 <div class="pricing-table">
 <table>
 <thead>
@@ -277,7 +323,6 @@ footer{
 <tbody id="pricing-table-body"></tbody>
 </table>
 </div>
-
 </div>
 </section>
 
@@ -286,155 +331,83 @@ footer{
 </footer>
 
 <script>
+function toggleMenu(){
+  document.getElementById("navMenu").classList.toggle("show");
+}
+</script>
+
+<script>
 const products = [
-  {name:"Matooke",category:"food",price:3000,unit:"Kg",
-  img:"bb1.jpg"},
-   {name:"Irish potatoes",category:"food",price:3000,unit:"Kg",
-  img:"ir.jpg"},
- {name:"Sweet potatoes",category:"food",price:3000,unit:"Kg",
-  img:"st.jpg"},
- {name:"Yams",category:"food",price:3000,unit:"Kg",
-  img:"ym.jpg"},
-
-
-
-
- {name:"Mangoes",category:"fruits",price:3000,unit:"Kg",
-  img:"mg.jpg"},
-  
- {name:"Bananas",category:"fruits",price:2000,unit:"Kg",
-  img:"bn.jpg"},
-  
- {name:"Oranges",category:"fruits",price:2500,unit:"Kg",
-  img:"org.jpg"},
-  
- {name:"Tomatoes",category:"vegetables",price:1800,unit:"Kg",
-  img:"t.jpg"},
-  
- {name:"Onions",category:"vegetables",price:2200,unit:"Kg",
-  img:"on.jpg"},
-  
- {name:"Maize",category:"grains",price:1500,unit:"Kg",
-  img:"mz.jpg"},
-  
- {name:"Rice",category:"grains",price:3500,unit:"Kg",
-  img:"r.jpg"},
-  
- {name:"Groundnuts",category:"dry",price:4000,unit:"Kg",
-  img:"gnt.jpg"},
+  {name:"Matooke",category:"food",price:3000,unit:"Kg",img:"bb1.jpg"},
+  {name:"Irish Potatoes",category:"food",price:3000,unit:"Kg",img:"ir.jpg"},
+  {name:"Sweet Potatoes",category:"food",price:3000,unit:"Kg",img:"st.jpg"},
+  {name:"Yams",category:"food",price:3000,unit:"Kg",img:"ym.jpg"},
+  {name:"Mangoes",category:"fruits",price:3000,unit:"Kg",img:"mg.jpg"},
+  {name:"Bananas",category:"fruits",price:2000,unit:"Kg",img:"bn.jpg"},
+  {name:"Oranges",category:"fruits",price:2500,unit:"Kg",img:"org.jpg"},
+  {name:"Tomatoes",category:"vegetables",price:1800,unit:"Kg",img:"t.jpg"},
+  {name:"Onions",category:"vegetables",price:2200,unit:"Kg",img:"on.jpg"},
+  {name:"Maize",category:"grains",price:1500,unit:"Kg",img:"mz.jpg"},
+  {name:"Rice",category:"grains",price:3500,unit:"Kg",img:"r.jpg"},
+  {name:"Groundnuts",category:"dry",price:4000,unit:"Kg",img:"gnt.jpg"}
 ];
 
-const grid = document.getElementById("products-grid");
-const tableBody = document.getElementById("pricing-table-body");
+const grid=document.getElementById("products-grid");
+const tableBody=document.getElementById("pricing-table-body");
 
 function loadProducts(list){
   grid.innerHTML="";
   tableBody.innerHTML="";
   list.forEach(p=>{
-    // cards
-    const card=document.createElement("div");
-    card.className="product-card";
-    card.innerHTML=`
-      <img src="${p.img}" alt="${p.name}">
+    grid.innerHTML+=`
+    <div class="product-card" onclick='openModal(${JSON.stringify(p)})'>
+      <img src="${p.img}">
       <div class="info">
         <h4>${p.name}</h4>
-        <p>${p.category}</p>
         <p class="price">UGX ${p.price}/${p.unit}</p>
       </div>
-    `;
-    card.onclick=()=>openModal(p);
-    grid.appendChild(card);
-
-    // pricing table
-    const tr=document.createElement("tr");
-    tr.innerHTML=`
+    </div>`;
+    tableBody.innerHTML+=`
+    <tr>
       <td>${p.name}</td>
       <td>${p.unit}</td>
       <td>${p.price}</td>
       <td>Available</td>
-<td>
-  <a href="contact.html">
-    <button class="order-btn">Order</button>
-  </a>
-</td>
-    `;
-    tableBody.appendChild(tr);
+      <td><a href="contact.html"><button class="order-btn">Order</button></a></td>
+    </tr>`;
   });
 }
 
 function openModal(p){
   document.getElementById("modal-body").innerHTML=`
-    <h3>${p.name}</h3>
-    <img src="${p.img}" style="width:100%;border-radius:8px;margin:10px 0;">
-    <p>Category: ${p.category}</p>
-    <p>Price: UGX ${p.price} per ${p.unit}</p>
-    <p>Freshly sourced from local farmers.</p>
-    <a href="contact.html">
-    <button class="order-btn">Order Now</button>
-     </a>
-  `;
+  <h3>${p.name}</h3>
+  <img src="${p.img}" style="width:100%;margin:10px 0;border-radius:8px;">
+  <p>UGX ${p.price} per ${p.unit}</p>
+  <a href="contact.html"><button class="order-btn">Order Now</button></a>`;
   document.getElementById("product-modal").style.display="flex";
 }
+
 function closeModal(){
   document.getElementById("product-modal").style.display="none";
 }
 
-/* FILTER */
 document.querySelectorAll(".filter-btn").forEach(btn=>{
   btn.onclick=()=>{
     document.querySelectorAll(".filter-btn").forEach(b=>b.classList.remove("active"));
     btn.classList.add("active");
     const cat=btn.dataset.category;
-    if(cat==="all") loadProducts(products);
-    else loadProducts(products.filter(p=>p.category===cat));
+    loadProducts(cat==="all"?products:products.filter(p=>p.category===cat));
   };
 });
 
-/* SORT */
-document.getElementById("sort-select").onchange=function(){
-  let sorted=[...products];
-  if(this.value==="price-low") sorted.sort((a,b)=>a.price-b.price);
-  if(this.value==="price-high") sorted.sort((a,b)=>b.price-a.price);
-  if(this.value==="name") sorted.sort((a,b)=>a.name.localeCompare(b.name));
-  loadProducts(sorted);
-};
+const urlParams=new URLSearchParams(window.location.search);
+const category=urlParams.get("category");
+if(category){
+  loadProducts(products.filter(p=>p.category===category));
+}
 
 loadProducts(products);
 </script>
 
-<script>
-/* ===== AUTO CATEGORY FILTER FROM URL ===== */
-const urlParams = new URLSearchParams(window.location.search);
-const categoryFromUrl = urlParams.get("category");
-
-if(categoryFromUrl){
-  // filter products
-  const filtered = products.filter(p => p.category === categoryFromUrl);
-  loadProducts(filtered);
-
-  // update active filter button
-  document.querySelectorAll(".filter-btn").forEach(btn=>{
-    btn.classList.remove("active");
-    if(btn.dataset.category === categoryFromUrl){
-      btn.classList.add("active");
-    }
-  });
-}
-</script>
-
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
