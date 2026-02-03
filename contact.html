@@ -25,64 +25,65 @@
     margin: auto;
   }
 
-  /* ================= HEADER & NAV (FIXED) ================= */
-  .main-header {
-    background: #2e7d32;
-    color: white;
-    padding: 15px 0;
-    width: 100%;
+  /* ================= HEADER ================= */
+.main-header{
+  background:#2e7d32;
+  color:white;
+  padding:15px 0;
+}
+
+.main-header .container{
+  width:min(92%,1200px);
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.main-header h2{
+  font-size:22px;
+  text-align:center;
+  white-space:nowrap;
+}
+
+
+/* NAV – ALWAYS VISIBLE & RESPONSIVE */
+.nav-links{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+  text-align:center;
+}
+
+.nav-links a{
+  color:white;
+  text-decoration:none;
+  font-weight:500;
+  font-size:15px;
+  white-space:nowrap;
+}
+
+.nav-links a:hover{
+  text-decoration:underline;
+}
+
+/* MOBILE FIX (ALL PHONES) */
+@media(max-width:667px){
+  .main-header .container{
+    flex-direction:column;
+    align-items:center;
   }
+}
 
-  .main-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+/* EXTRA SMALL PHONES (320px etc) */
+@media(max-width:380px){
+  .nav-links a{
+    font-size:14px;
   }
-
-  .main-header h2 {
-    font-size: 20px;
-    letter-spacing: 0.5px;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 15px;
-  }
-
-  .nav-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 15px;
-    padding: 5px 10px;
-    transition: 0.3s;
-  }
-
-  /* MOBILE NAVIGATION CORRECTIONS */
-  @media (max-width: 768px) {
-    .main-header .container {
-      flex-direction: column; /* Stacks Brand above Nav */
-      text-align: center;
-      gap: 15px;
-    }
-
-    .nav-links {
-      width: 100%;
-      justify-content: center;
-      display: grid;
-      grid-template-columns: 1fr 1fr; /* Two buttons per row for easy tapping */
-      gap: 8px;
-    }
-
-    .nav-links a {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 12px 5px;
-      border-radius: 6px;
-      font-size: 14px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-  }
+}
 
   /* For very narrow phones like Techno Spark Go / S8+ in portrait */
   @media (max-width: 380px) {
