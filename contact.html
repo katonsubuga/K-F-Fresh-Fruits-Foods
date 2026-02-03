@@ -18,45 +18,78 @@ body{
   color:#333;
 }
 
-/* HEADER */
-header{
+
+/* ================= HEADER ================= */
+.main-header{
   background:#2e7d32;
   color:white;
   padding:15px 0;
 }
-header .container{
-  width:90%;
+
+.main-header .container{
+  width:min(92%,1200px);
   margin:auto;
   display:flex;
   justify-content:space-between;
   align-items:center;
+  flex-wrap:wrap;
+  gap:10px;
 }
-header nav a{
+
+.main-header h2{
+  font-size:22px;
+  text-align:center;
+  white-space:nowrap;
+}
+
+
+/* NAV – ALWAYS VISIBLE & RESPONSIVE */
+.nav-links{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:14px;
+  text-align:center;
+}
+
+.nav-links a{
   color:white;
   text-decoration:none;
-  margin-left:20px;
   font-weight:500;
+  font-size:15px;
+  white-space:nowrap;
 }
 
-/* HERO */
+.nav-links a:hover{
+  text-decoration:underline;
+}
+
+/* MOBILE FIX (ALL PHONES) */
+@media(max-width:768px){
+  .main-header .container{
+    flex-direction:column;
+    align-items:center;
+  }
+}
+
+/* EXTRA SMALL PHONES (320px etc) */
+@media(max-width:380px){
+  .nav-links a{
+    font-size:14px;
+  }
+}
+
+/* ================= HERO ================= */
 .page-hero{
   background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
-  url('f2.jpg');
-  background-size:cover;
-  background-position:center;
+  url('f2.jpg') center/cover no-repeat;
   text-align:center;
   color:white;
-  padding:80px 20px;
-}
-.page-hero h1{font-size:42px;}
-.page-hero p{margin-top:10px;font-size:18px;}
-
-/* CONTAINER */
-.container{
-  width:90%;
-  margin:auto;
+  padding:70px 15px;
 }
 
+.page-hero h1{font-size:34px;}
+.page-hero p{margin-top:10px;font-size:16px;}
 /* CONTACT SECTION */
 .contact-section{
   padding:60px 0;
@@ -253,6 +286,60 @@ footer{
 }
 
 
+                
+/* SELLER SECTION */
+.seller-section{
+  background:#2f6b2f;
+  padding:60px 0;
+}
+
+.seller-content{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+  align-items:start;
+}
+
+.seller-info{
+  color:white;
+}
+
+.seller-info h2{
+  margin-bottom:15px;
+}
+
+.seller-benefits{
+  margin:15px 0;
+  padding-left:0;
+  list-style:none;
+}
+
+.seller-benefits li{
+  margin-bottom:8px;
+}
+
+.seller-contact a{
+  color:#fff;
+  text-decoration:none;
+}
+
+.seller-form{
+  background:#fff;
+  padding:25px;
+  border-radius:12px;
+}
+
+.seller-form h3{
+  margin-bottom:15px;
+  color:#2e7d32;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .seller-content{
+    grid-template-columns:1fr;
+  }
+}
 
 
 </style>
@@ -260,15 +347,15 @@ footer{
 
 <body>
 
-<header>
+
+<header class="main-header">
   <div class="container">
     <h2>K F Fresh Fruits & Foods</h2>
-    <nav>
+    <nav class="nav-links">
       <a href="index.html">Home</a>
       <a href="about us.html">About Us</a>
       <a href="products.html">Products</a>
       <a href="contact.html">Contact</a>
-
     </nav>
   </div>
 </header>
@@ -370,55 +457,69 @@ footer{
 </div>
 </section>
 
+<!-- Seller Section -->
+<section class="seller-section" id="seller">
+  <div class="container">
 
-  <!-- Seller Section -->
-    <section class="seller-section" id="seller">
-    <div class="seller-form" id="seller-register">
+    <div class="seller-content">
 
-        <div class="container">
-            <div class="seller-content">
-                <div class="seller-info">
-                    <h2>Sell Your Produce With Us</h2>
-                    <p>Are you a farmer or food supplier? Join our network and sell your fresh produce directly to customers through our platform.</p>
-                    <ul class="seller-benefits">
-                        <li><i class="fas fa-check-circle"></i> No upfront costs</li>
-                        <li><i class="fas fa-check-circle"></i> Wider customer reach</li>
-                        <li><i class="fas fa-check-circle"></i> Fast payment processing</li>
-                        <li><i class="fas fa-check-circle"></i> Marketing support</li>
-                    </ul>
-                    <div class="seller-contact">
-                        <h4>Contact Seller Manager:</h4>
-                        <p><strong>Kasamba Francis</strong></p>
-                        <p><i class="fas fa-phone"></i> +256 703 535 707</p>
-                        <p><i class="fas fa-envelope"></i> francis@kffreshfruits.com</p>
-                    </div>
-                </div>
-<form id="seller-registration" enctype="multipart/form-data">
-    <input type="text" name="name" placeholder="Full Name" required>
-    <input type="tel" name="phone" placeholder="Phone Number" required>
-    <input type="email" name="email" placeholder="Email Address">
+      <!-- SELLER INFORMATION -->
+      <div class="seller-info">
+        <h2>Sell Your Produce With Us</h2>
+        <p>
+          Are you a farmer or food supplier? Join our network and sell your
+          fresh produce directly to customers through our platform.
+        </p>
 
-    <select name="product" required>
-        <option value="">Product Type</option>
-        <option>Fresh Fruits</option>
-        <option>Vegetables</option>
-        <option>Grains & Cereals</option>
-        <option>Other Foods</option>
-    </select>
+        <ul class="seller-benefits">
+          <li>✔ No upfront costs</li>
+          <li>✔ Wider customer reach</li>
+          <li>✔ Fast payment processing</li>
+          <li>✔ Marketing support</li>
+        </ul>
 
-    <textarea name="description" placeholder="Describe your products..." rows="3"></textarea>
-
-    <label><strong>Upload Photos / Documents</strong></label>
-    <input type="file" name="files" multiple required>
-
-    <button type="submit" class="btn-primary">Submit Application</button>
-</form>
-
-                </div>
-            </div>
+        <div class="seller-contact">
+          <h4>Seller Manager</h4>
+          <p><strong>Kasamba Francis</strong></p>
+          <p>📞 <a href="tel:+256703535707">+256 703 535 707</a></p>
+          <p>📧 francis@kffreshfruits.com</p>
         </div>
-    </section>
+      </div>
 
+      <!-- SELLER REGISTRATION FORM -->
+      <div class="seller-form" id="seller-register">
+        <h3>Seller Registration Form</h3>
+
+        <form id="seller-registration" enctype="multipart/form-data">
+
+          <input type="text" name="name" placeholder="Full Name" required>
+          <input type="tel" name="phone" placeholder="Phone Number" required>
+          <input type="email" name="email" placeholder="Email Address">
+
+          <select name="product" required>
+            <option value="">Product Type</option>
+            <option>Fresh Fruits</option>
+            <option>Vegetables</option>
+            <option>Grains & Cereals</option>
+            <option>Other Foods</option>
+          </select>
+
+          <textarea name="description" rows="4"
+            placeholder="Describe your products..."></textarea>
+
+          <label><strong>Upload Photos / Documents</strong></label>
+          <input type="file" name="files" multiple required>
+
+          <button type="submit" class="submit-btn">
+            Submit Application
+          </button>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
 <footer>
 <p>&copy; 2026 K F Fresh Fruits & Foods | Uganda</p>
 </footer>
