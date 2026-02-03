@@ -6,11 +6,12 @@
 <title>K F Fresh Fruits & Foods | Products</title>
 
 <style>
+/* ===== GLOBAL RESET ===== */
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:"Segoe UI",Arial,sans-serif;
+  font-family:"Segoe UI", Arial, sans-serif;
 }
 
 body{
@@ -19,15 +20,20 @@ body{
   overflow-x:hidden;
 }
 
-/* ================= HEADER ================= */
-header{
+img{
+  max-width:100%;
+  height:auto;
+}
+
+/* ===== HEADER (MATCHES ABOUT US) ===== */
+.main-header{
   background:#2e7d32;
   color:white;
   padding:15px 0;
 }
 
-header .container{
-  width:90%;
+.main-header .container{
+  width:min(92%,1200px);
   margin:auto;
   display:flex;
   justify-content:space-between;
@@ -35,19 +41,23 @@ header .container{
   flex-wrap:wrap;
 }
 
-header h2{
+.main-header h2{
   font-size:22px;
 }
 
-nav{
+.main-header nav{
   display:flex;
   gap:20px;
 }
 
-nav a{
+.main-header nav a{
   color:white;
   text-decoration:none;
   font-weight:500;
+}
+
+.main-header nav a:hover{
+  text-decoration:underline;
 }
 
 /* MOBILE MENU */
@@ -57,33 +67,26 @@ nav a{
   cursor:pointer;
 }
 
-/* ================= HERO ================= */
+/* ===== HERO ===== */
 .page-hero{
-  background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
-  url('f2.jpg') center/cover no-repeat;
+  background:
+    linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+    url('f2.jpg') center/cover no-repeat;
   text-align:center;
   color:white;
-  padding:70px 15px;
+  padding:80px 15px;
 }
 
 .page-hero h1{font-size:36px;}
 .page-hero p{margin-top:10px;font-size:16px;}
 
-/* ================= SECTIONS ================= */
+/* ===== CONTAINER ===== */
 .container{
-  width:90%;
-  max-width:1200px;
+  width:min(92%,1200px);
   margin:auto;
 }
 
-.section-title{
-  text-align:center;
-  font-size:30px;
-  margin:40px 0;
-  color:#2e7d32;
-}
-
-/* ================= PRODUCTS HEADER ================= */
+/* ===== PRODUCTS HEADER ===== */
 .products-header{
   display:flex;
   justify-content:space-between;
@@ -102,8 +105,8 @@ nav a{
   padding:8px 14px;
   border:none;
   border-radius:20px;
-  cursor:pointer;
   background:#e0e0e0;
+  cursor:pointer;
 }
 
 .filter-btn.active{
@@ -116,18 +119,18 @@ nav a{
   border-radius:6px;
 }
 
-/* ================= PRODUCTS GRID ================= */
+/* ===== PRODUCTS GRID ===== */
 .products-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
   gap:20px;
 }
 
 .product-card{
   background:white;
   border-radius:12px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.08);
   overflow:hidden;
+  box-shadow:0 5px 15px rgba(0,0,0,0.08);
   cursor:pointer;
   transition:.3s;
 }
@@ -151,15 +154,15 @@ nav a{
   color:#1b5e20;
 }
 
-/* ================= MODAL ================= */
+/* ===== MODAL ===== */
 .modal{
   display:none;
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,0.6);
+  background:rgba(0,0,0,.6);
   justify-content:center;
   align-items:center;
-  z-index:1000;
+  z-index:999;
 }
 
 .modal-content{
@@ -179,7 +182,14 @@ nav a{
   cursor:pointer;
 }
 
-/* ================= PRICING TABLE ================= */
+/* ===== PRICING TABLE ===== */
+.section-title{
+  text-align:center;
+  font-size:30px;
+  margin:40px 0;
+  color:#2e7d32;
+}
+
 .pricing-table{
   overflow-x:auto;
 }
@@ -212,7 +222,7 @@ nav a{
   cursor:pointer;
 }
 
-/* ================= FOOTER ================= */
+/* ===== FOOTER ===== */
 footer{
   background:#1b5e20;
   color:white;
@@ -221,9 +231,25 @@ footer{
   margin-top:40px;
 }
 
-/* ================= RESPONSIVE ================= */
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .main-header .container{
+    flex-direction:column;
+    gap:10px;
+  }
+
+  .main-header nav{
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+}
+
 @media(max-width:768px){
-  nav{
+  .menu-toggle{
+    display:block;
+  }
+
+  .main-header nav{
     display:none;
     flex-direction:column;
     width:100%;
@@ -231,29 +257,25 @@ footer{
     margin-top:10px;
   }
 
-  nav.show{
+  .main-header nav.show{
     display:flex;
   }
 
-  .menu-toggle{
-    display:block;
-  }
+  .page-hero h1{font-size:28px;}
+  .products-header{flex-direction:column;}
+}
 
-  .page-hero h1{
-    font-size:28px;
-  }
-
-  .products-header{
-    flex-direction:column;
-    align-items:flex-start;
-  }
+@media(max-width:480px){
+  .product-card img{height:140px;}
+  h2{font-size:1.4rem;}
+  p{font-size:14px;}
 }
 </style>
 </head>
 
 <body>
 
-<header>
+<header class="main-header">
   <div class="container">
     <h2>K F Fresh Fruits & Foods</h2>
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
@@ -271,7 +293,7 @@ footer{
   <p>Quality fruits and foods at competitive prices</p>
 </section>
 
-<section class="products-page">
+<section>
 <div class="container">
 
 <div class="products-header">
@@ -296,19 +318,13 @@ footer{
 
 <div class="products-grid" id="products-grid"></div>
 
-<div id="product-modal" class="modal">
-  <div class="modal-content">
-    <span class="close-modal" onclick="closeModal()">&times;</span>
-    <div id="modal-body"></div>
-  </div>
-</div>
-
 </div>
 </section>
 
-<section class="pricing-section">
+<section>
 <div class="container">
 <h2 class="section-title">Current Prices</h2>
+
 <div class="pricing-table">
 <table>
 <thead>
@@ -326,6 +342,13 @@ footer{
 </div>
 </section>
 
+<div id="product-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeModal()">&times;</span>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
 <footer>
 <p>&copy; 2026 K F Fresh Fruits & Foods | Uganda</p>
 </footer>
@@ -334,77 +357,69 @@ footer{
 function toggleMenu(){
   document.getElementById("navMenu").classList.toggle("show");
 }
-</script>
 
-<script>
-const products = [
-  {name:"Matooke",category:"food",price:3000,unit:"Kg",img:"bb1.jpg"},
-  {name:"Irish Potatoes",category:"food",price:3000,unit:"Kg",img:"ir.jpg"},
-  {name:"Sweet Potatoes",category:"food",price:3000,unit:"Kg",img:"st.jpg"},
-  {name:"Yams",category:"food",price:3000,unit:"Kg",img:"ym.jpg"},
-  {name:"Mangoes",category:"fruits",price:3000,unit:"Kg",img:"mg.jpg"},
-  {name:"Bananas",category:"fruits",price:2000,unit:"Kg",img:"bn.jpg"},
-  {name:"Oranges",category:"fruits",price:2500,unit:"Kg",img:"org.jpg"},
-  {name:"Tomatoes",category:"vegetables",price:1800,unit:"Kg",img:"t.jpg"},
-  {name:"Onions",category:"vegetables",price:2200,unit:"Kg",img:"on.jpg"},
-  {name:"Maize",category:"grains",price:1500,unit:"Kg",img:"mz.jpg"},
-  {name:"Rice",category:"grains",price:3500,unit:"Kg",img:"r.jpg"},
-  {name:"Groundnuts",category:"dry",price:4000,unit:"Kg",img:"gnt.jpg"}
+const products=[
+ {name:"Matooke",category:"food",price:3000,unit:"Kg",img:"bb1.jpg"},
+ {name:"Irish Potatoes",category:"food",price:3000,unit:"Kg",img:"ir.jpg"},
+ {name:"Sweet Potatoes",category:"food",price:3000,unit:"Kg",img:"st.jpg"},
+ {name:"Yams",category:"food",price:3000,unit:"Kg",img:"ym.jpg"},
+ {name:"Mangoes",category:"fruits",price:3000,unit:"Kg",img:"mg.jpg"},
+ {name:"Bananas",category:"fruits",price:2000,unit:"Kg",img:"bn.jpg"},
+ {name:"Oranges",category:"fruits",price:2500,unit:"Kg",img:"org.jpg"},
+ {name:"Tomatoes",category:"vegetables",price:1800,unit:"Kg",img:"t.jpg"},
+ {name:"Onions",category:"vegetables",price:2200,unit:"Kg",img:"on.jpg"},
+ {name:"Maize",category:"grains",price:1500,unit:"Kg",img:"mz.jpg"},
+ {name:"Rice",category:"grains",price:3500,unit:"Kg",img:"r.jpg"},
+ {name:"Groundnuts",category:"dry",price:4000,unit:"Kg",img:"gnt.jpg"}
 ];
 
 const grid=document.getElementById("products-grid");
-const tableBody=document.getElementById("pricing-table-body");
+const table=document.getElementById("pricing-table-body");
 
 function loadProducts(list){
-  grid.innerHTML="";
-  tableBody.innerHTML="";
-  list.forEach(p=>{
-    grid.innerHTML+=`
-    <div class="product-card" onclick='openModal(${JSON.stringify(p)})'>
-      <img src="${p.img}">
-      <div class="info">
-        <h4>${p.name}</h4>
-        <p class="price">UGX ${p.price}/${p.unit}</p>
-      </div>
-    </div>`;
-    tableBody.innerHTML+=`
-    <tr>
-      <td>${p.name}</td>
-      <td>${p.unit}</td>
-      <td>${p.price}</td>
-      <td>Available</td>
-      <td><a href="contact.html"><button class="order-btn">Order</button></a></td>
-    </tr>`;
-  });
+ grid.innerHTML="";
+ table.innerHTML="";
+ list.forEach(p=>{
+  grid.innerHTML+=`
+  <div class="product-card" onclick='openModal(${JSON.stringify(p)})'>
+    <img src="${p.img}">
+    <div class="info">
+      <h4>${p.name}</h4>
+      <p class="price">UGX ${p.price}/${p.unit}</p>
+    </div>
+  </div>`;
+  table.innerHTML+=`
+  <tr>
+    <td>${p.name}</td>
+    <td>${p.unit}</td>
+    <td>${p.price}</td>
+    <td>Available</td>
+    <td><a href="contact.html"><button class="order-btn">Order</button></a></td>
+  </tr>`;
+ });
 }
 
 function openModal(p){
-  document.getElementById("modal-body").innerHTML=`
-  <h3>${p.name}</h3>
-  <img src="${p.img}" style="width:100%;margin:10px 0;border-radius:8px;">
-  <p>UGX ${p.price} per ${p.unit}</p>
-  <a href="contact.html"><button class="order-btn">Order Now</button></a>`;
-  document.getElementById("product-modal").style.display="flex";
+ document.getElementById("modal-body").innerHTML=`
+ <h3>${p.name}</h3>
+ <img src="${p.img}" style="margin:10px 0;border-radius:8px;">
+ <p>UGX ${p.price} per ${p.unit}</p>
+ <a href="contact.html"><button class="order-btn">Order Now</button></a>`;
+ document.getElementById("product-modal").style.display="flex";
 }
 
 function closeModal(){
-  document.getElementById("product-modal").style.display="none";
+ document.getElementById("product-modal").style.display="none";
 }
 
 document.querySelectorAll(".filter-btn").forEach(btn=>{
-  btn.onclick=()=>{
-    document.querySelectorAll(".filter-btn").forEach(b=>b.classList.remove("active"));
-    btn.classList.add("active");
-    const cat=btn.dataset.category;
-    loadProducts(cat==="all"?products:products.filter(p=>p.category===cat));
-  };
+ btn.onclick=()=>{
+  document.querySelectorAll(".filter-btn").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+  const cat=btn.dataset.category;
+  loadProducts(cat==="all"?products:products.filter(p=>p.category===cat));
+ };
 });
-
-const urlParams=new URLSearchParams(window.location.search);
-const category=urlParams.get("category");
-if(category){
-  loadProducts(products.filter(p=>p.category===category));
-}
 
 loadProducts(products);
 </script>
