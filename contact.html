@@ -298,83 +298,9 @@
     alert("Application Started via WhatsApp");
   });
 </script>
-
-
-<script>
-document.getElementById("seller-registration").addEventListener("submit", function(e){
-  e.preventDefault();
-
-  const form = this;
-  const name = form.name.value;
-  const phone = form.phone.value;
-  const email = form.email.value;
-  const product = form.product.value;
-  const description = form.description.value;
-
-  /* =====================
-     WHATSAPP MESSAGE
-  ===================== */
-  const whatsappMsg = `
-NEW SELLER APPLICATION – K F FRESH FRUITS & FOODS
-
-Name: ${name}
-Phone: ${phone}
-Email: ${email}
-Product Type: ${product}
-
-Description:
-${description}
-
-📎 Attachments sent via Email
-`;
-
-  window.open(
-    "https://wa.me/256703535707?text=" + encodeURIComponent(whatsappMsg),
-    "_blank"
-  );
-
-  /* =====================
-     EMAIL WITH ATTACHMENTS
-  ===================== */
-  emailjs.sendForm(
-    "YOUR_SERVICE_ID",
-    "YOUR_TEMPLATE_ID",
-    form
-  ).then(
-    function(){
-      alert("✅ Application sent successfully via WhatsApp & Email");
-      form.reset();
-    },
-    function(error){
-      alert("Email failed. Try again.");
-      console.error(error);
-    }
-  );
-});
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-
-<script>
-(function(){
-  emailjs.init("YOUR_PUBLIC_KEY"); // <-- from EmailJS
-})();
-</script>
-
-
-
-
-
-
-
-
-
-
-
-  
-
 </body>
 </html>
+
 
 
 
