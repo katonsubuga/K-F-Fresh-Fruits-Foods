@@ -300,6 +300,39 @@
 </script>
 
 
+<script>
+document.getElementById("seller-registration").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const form = this;
+  const name = form.name.value;
+  const phone = form.phone.value;
+  const email = form.email.value;
+  const product = form.product.value;
+  const description = form.description.value;
+
+  /* =====================
+     WHATSAPP MESSAGE
+  ===================== */
+  const whatsappMsg = `
+NEW SELLER APPLICATION – K F FRESH FRUITS & FOODS
+
+Name: ${name}
+Phone: ${phone}
+Email: ${email}
+Product Type: ${product}
+
+Description:
+${description}
+
+📎 Attachments sent via Email
+`;
+
+  window.open(
+    "https://wa.me/256703535707?text=" + encodeURIComponent(whatsappMsg),
+    "_blank"
+  );
+
   /* =====================
      EMAIL WITH ATTACHMENTS
   ===================== */
@@ -342,6 +375,7 @@
 
 </body>
 </html>
+
 
 
 
