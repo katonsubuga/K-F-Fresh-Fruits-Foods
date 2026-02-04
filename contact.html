@@ -252,7 +252,9 @@
 <form id="sellerRegistration" enctype="multipart/form-data">
 
   <input type="text" name="seller_name" placeholder="Full Name" required>
+
   <input type="tel" name="seller_phone" placeholder="Phone Number" required>
+
   <input type="email" name="seller_email" placeholder="Email Address" required>
 
   <select name="product_category" required>
@@ -263,14 +265,22 @@
     <option>Other Foods</option>
   </select>
 
-  <textarea name="description" rows="4" placeholder="Describe your produce..."></textarea>
+  <textarea name="description" rows="4"
+    placeholder="Describe your produce..."></textarea>
 
   <label><strong>Upload Photos / Videos</strong></label>
-  <input type="file" name="attachments" accept="image/*,video/*" multiple required>
+  <input type="file"
+         name="attachments"
+         accept="image/*,video/*"
+         multiple
+         required>
 
-  <button type="submit" class="submit-btn">Submit Application</button>
+  <button type="submit" class="submit-btn">
+    Submit Application
+  </button>
 
 </form>
+
         
       </div>
     </div>
@@ -282,34 +292,10 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script>
-  // INITIALIZE EMAILJS
-  (function(){ emailjs.init("YOUR_PUBLIC_KEY"); })();
-
-  // CONTACT FORM
-  document.getElementById("contactForm").addEventListener("submit", function(e){
-    e.preventDefault();
-    const fullMessage = `NEW ORDER\nName: ${document.getElementById("name").value}\nPhone: ${document.getElementById("phone").value}\nLocation: ${document.getElementById("location").value}\nProduct: ${document.getElementById("purpose").value}\nDetails: ${document.getElementById("message").value}`;
-    
-    window.open("https://wa.me/256703535707?text=" + encodeURIComponent(fullMessage), "_blank");
-    document.getElementById("successMsg").style.display="block";
-    this.reset();
-  });
-
-  // SELLER FORM
-  document.getElementById("sellerRegistration").addEventListener("submit", function(e){
-    e.preventDefault();
-    const sMsg = `NEW SELLER\nName: ${document.getElementById("s-name").value}\nPhone: ${document.getElementById("s-phone").value}\nProduct: ${document.getElementById("s-product").value}`;
-    window.open("https://wa.me/256703535707?text=" + encodeURIComponent(sMsg), "_blank");
-    alert("Application Started via WhatsApp");
-  });
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
 <script>
 (function(){
-  emailjs.init("YOUR_PUBLIC_KEY"); // 🔑 EmailJS public key
+  emailjs.init("YOUR_PUBLIC_KEY"); // 🔑 from EmailJS
 })();
 
 document.getElementById("sellerRegistration").addEventListener("submit", function(e){
@@ -317,15 +303,15 @@ document.getElementById("sellerRegistration").addEventListener("submit", functio
 
   const form = this;
 
-  const sellerName = form.seller_name.value;
-  const sellerPhone = form.seller_phone.value;
-  const category = form.product_category.value;
-  const desc = form.description.value;
+  const name  = form.seller_name.value;
+  const phone = form.seller_phone.value;
+  const cat   = form.product_category.value;
+  const desc  = form.description.value;
 
   /* ================= EMAIL (WITH ATTACHMENTS) ================= */
   emailjs.sendForm(
-    "YOUR_SERVICE_ID",     // 🔑 EmailJS service ID
-    "YOUR_TEMPLATE_ID",    // 🔑 EmailJS template ID
+    "YOUR_SERVICE_ID",     // EmailJS Service ID
+    "YOUR_TEMPLATE_ID",    // EmailJS Template ID
     form
   ).then(function(){
 
@@ -333,27 +319,28 @@ document.getElementById("sellerRegistration").addEventListener("submit", functio
     const whatsappMsg =
 `NEW SELLER APPLICATION – K F FRESH FRUITS & FOODS
 
-Name: ${sellerName}
-Phone: ${sellerPhone}
-Category: ${category}
+Name: ${name}
+Phone: ${phone}
+Category: ${cat}
 
 Description:
 ${desc}
 
-📎 Photos/Videos sent via Email`;
+📎 Photos & Videos sent via Email`;
 
     window.open(
-      "https://wa.me/256703535707?text=" + encodeURIComponent(whatsappMsg),
+      "https://wa.me/256703535707?text=" +
+      encodeURIComponent(whatsappMsg),
       "_blank"
     );
 
-    alert("✅ Application sent successfully!\n\nAttachments delivered via Email.\nWhatsApp opened for confirmation.");
+    alert("✅ Application sent successfully!\n\nAttachments delivered to kasambafranco@gmail.com");
 
     form.reset();
 
   }, function(error){
-    alert("❌ Email failed. Please try again.");
     console.error(error);
+    alert("❌ Email failed. Please try again.");
   });
 });
 </script>
@@ -367,10 +354,10 @@ ${desc}
 
 
 
-
   
 </body>
 </html>
+
 
 
 
