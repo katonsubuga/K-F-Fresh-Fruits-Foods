@@ -1,368 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Contact Us | K F Fresh Fruits & Foods</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Contact Us | K F Fresh Fruits & Foods</title>
+    <style>
+        /* GLOBAL STYLES */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Segoe UI", Arial, sans-serif; }
+        body { background: #f5f8fb; color: #333; line-height: 1.6; }
+        .container { width: min(92%, 1200px); margin: auto; }
 
-<style>
-  /* GLOBAL STYLES */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Segoe UI", Arial, sans-serif;
-  }
+        /* HEADER */
+        .main-header { background: #2e7d32; color: white; padding: 15px 0; }
+        .main-header .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+        .nav-links { display: flex; flex-wrap: wrap; gap: 10px; }
+        .nav-links a { color: white; text-decoration: none; font-weight: 500; font-size: 15px; }
 
-  body {
-    background: #f5f8fb;
-    color: #333;
-    line-height: 1.6;
-  }
+        /* HERO */
+        .page-hero { background: linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)), url('f2.jpg') center/cover no-repeat; text-align: center; color: white; padding: 60px 15px; }
 
-  .container {
-    width: min(92%, 1200px);
-    margin: auto;
-  }
+        /* FORMS */
+        .contact-section { padding: 40px 0; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .contact-info, .contact-form, .seller-form { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        input, textarea, select { width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 8px; }
+        
+        .file-box { border: 2px dashed #2e7d32; padding: 15px; text-align: center; margin-bottom: 15px; border-radius: 8px; background: #f9fff9; }
+        .submit-btn { width: 100%; padding: 14px; background: #2e7d32; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        .submit-btn:hover { background: #1b5e20; }
 
-  /* ================= HEADER ================= */
-.main-header{
-  background:#2e7d32;
-  color:white;
-  padding:15px 0;
-}
+        .seller-section { background: #2f6b2f; color: white; padding: 50px 0; }
+        .seller-content { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
 
-.main-header .container{
-  width:min(92%,1200px);
-  margin:auto;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:10px;
-}
-
-.main-header h2{
-  font-size:22px;
-  text-align:center;
-  white-space:nowrap;
-}
-
-
-/* NAV – ALWAYS VISIBLE & RESPONSIVE */
-.nav-links{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:10px;
-  text-align:center;
-}
-
-.nav-links a{
-  color:white;
-  text-decoration:none;
-  font-weight:500;
-  font-size:15px;
-  white-space:nowrap;
-}
-
-.nav-links a:hover{
-  text-decoration:underline;
-}
-
-/* MOBILE FIX (ALL PHONES) */
-@media(max-width:667px){
-  .main-header .container{
-    flex-direction:column;
-    align-items:center;
-  }
-}
-
-/* EXTRA SMALL PHONES (320px etc) */
-@media(max-width:380px){
-  .nav-links a{
-    font-size:14px;
-  }
-}
-
-  /* For very narrow phones like Techno Spark Go / S8+ in portrait */
-  @media (max-width: 380px) {
-    .main-header h2 { font-size: 18px; }
-    .nav-links a { font-size: 13px; padding: 10px 2px; }
-  }
-
-  /* ================= HERO ================= */
-  .page-hero {
-    background: linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)), url('f2.jpg') center/cover no-repeat;
-    text-align: center;
-    color: white;
-    padding: 60px 15px;
-  }
-
-  .page-hero h1 { font-size: 28px; }
-
-  /* ================= CONTACT SECTION ================= */
-  .contact-section { padding: 40px 0; }
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-  }
-
-  .contact-info, .contact-form, .seller-form {
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  }
-
-  .contact-info h2, .contact-form h2 { color: #2e7d32; margin-bottom: 20px; }
-
-  .info-item { display: flex; align-items: flex-start; margin: 15px 0; }
-  .info-item span { font-size: 20px; margin-right: 12px; }
-
-  .form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin-bottom: 10px;
-  }
-
-  input, textarea, select {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 15px;
-  }
-
-  .submit-btn {
-    width: 100%;
-    padding: 14px;
-    background: #2e7d32;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-
-  .success-msg { display: none; margin-top: 15px; color: green; font-weight: bold; text-align: center; }
-
-  /* ================= SELLER SECTION ================= */
-  .seller-section { background: #2f6b2f; color: white; padding: 50px 0; }
-  .seller-content { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-  .seller-benefits li { list-style: none; margin: 10px 0; }
-  .seller-form { color: #333; }
-
-  /* RESPONSIVE LAYOUT */
-  @media (max-width: 850px) {
-    .contact-grid, .seller-content { grid-template-columns: 1fr; }
-    .form-row { grid-template-columns: 1fr; }
-  }
-
-  footer { background: #1b5e20; color: white; text-align: center; padding: 25px; margin-top: 30px; }
-</style>
+        @media (max-width: 850px) { .contact-grid, .seller-content { grid-template-columns: 1fr; } .form-row { grid-template-columns: 1fr; } }
+        footer { background: #1b5e20; color: white; text-align: center; padding: 25px; margin-top: 30px; }
+    </style>
 </head>
 <body>
 
 <header class="main-header">
-  <div class="container">
-    <h2>K F Fresh Fruits & Foods</h2>
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="about us.html">About Us</a>
-      <a href="products.html">Products</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </div>
+    <div class="container">
+        <h2>K F Fresh Fruits & Foods</h2>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about us.html">About Us</a>
+            <a href="products.html">Products</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </div>
 </header>
 
 <section class="page-hero">
-  <div class="container">
-    <h1>Contact Us</h1>
-    <p>Fresh and healthy food delivered to your door</p>
-  </div>
+    <div class="container">
+        <h1>Contact Us</h1>
+        <p>Fresh and healthy food delivered to your door</p>
+    </div>
 </section>
 
 <section class="contact-section">
-  <div class="container">
-    <div class="contact-grid">
-      <div class="contact-info">
-        <h2>Get in Touch</h2>
-        <div class="info-item"><span>📍</span><p>Maganjo, Kampala, Uganda</p></div>
-        <div class="info-item"><span>📞</span><p>+256 703 535 707</p></div>
-        <div class="info-item"><span>📧</span><p>katoabdul737@gmail.com</p></div>
-        <div class="info-item"><span>⏰</span><p>Open 24 Hours</p></div>
-        <div class="info-item"><span>💬</span><p>WhatsApp: <a href="https://wa.me/256703535707" style="color:#2e7d32; font-weight:bold;">Chat Now</a></p></div>
-      </div>
+    <div class="container">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h2>Get in Touch</h2>
+                <p>📍 Maganjo, Kampala, Uganda</p>
+                <p>📞 +256 703 535 707</p>
+                <p>📧 katoabdul737@gmail.com</p>
+                <p>⏰ Open 24 Hours</p>
+            </div>
 
-      <div class="contact-form">
-        <h2>Place Order</h2>
-        <form id="contactForm">
-          <div class="form-row">
-            <input type="text" id="name" placeholder="Full Name" required>
-            <input type="tel" id="phone" placeholder="Phone Number" required>
-          </div>
-          <div class="form-row">
-            <input type="email" id="email" placeholder="Email">
-            <input type="text" id="location" placeholder="Delivery Location" required>
-          </div>
-          <select id="purpose" required>
-            <option value="">Select a Product</option>
-            <option>Matooke</option>
-            <option>Rice</option>
-            <option>Irish Potatoes</option>
-            <option>Sweetpotatoes</option>
-            <option>Yams</option>
-            <option>Mangoes</option>
-            <option>Bananas</option>
-            <option>Oranges</option>
-            <option>Onions</option>
-            <option>Tomatoes</option>
-            <option>Maize</option>
-            <option> Groungnuts</option>
-             <option>Tomatoes</option>
-            <option>General Inquiry</option>
-          </select>
-          <textarea id="message" rows="4" placeholder="Order details..." required></textarea>
-          <button type="submit" class="submit-btn">Send Order</button>
-          <div class="success-msg" id="successMsg">✅ Order Sent Successfully!</div>
-        </form>
-      </div>
+            <div class="contact-form">
+                <h2>Place Order</h2>
+                <form id="contactForm">
+                    <div class="form-row">
+                        <input type="text" id="name" placeholder="Full Name" required>
+                        <input type="tel" id="phone" placeholder="Phone Number" required>
+                    </div>
+                    <input type="text" id="location" placeholder="Delivery Location" required>
+                    <select id="purpose" required>
+                        <option value="">Select a Product</option>
+                        <option>Matooke</option>
+                        <option>Rice</option>
+                        <option>Irish Potatoes</option>
+                        <option>Mangoes</option>
+                        <option>General Inquiry</option>
+                    </select>
+                    <textarea id="message" rows="3" placeholder="Additional details..." required></textarea>
+                    <button type="submit" class="submit-btn">Send Order via WhatsApp</button>
+                </form>
+            </div>
+        </div>
     </div>
-  </div>
 </section>
 
 <section class="seller-section">
-  <div class="container">
-    <div class="seller-content">
-      <div class="seller-info">
-        <h2>Sell With Us</h2>
-        <p>Join our network of farmers and suppliers.</p>
-        <ul class="seller-benefits">
-          <li>✔ No upfront costs</li>
-          <li>✔ Fast payment</li>
-          <li>✔ Wider reach</li>
-        </ul>
-      </div>
-      <div class="seller-form">
-        <h3>Seller Registration</h3>
-<form id="sellerRegistration" enctype="multipart/form-data">
+    <div class="container">
+        <div class="seller-content">
+            <div class="seller-info">
+                <h2>Sell With Us</h2>
+                <p>Join our network of farmers and suppliers.</p>
+                <ul style="margin-top: 20px; list-style: none;">
+                    <li>✔ Fast payment</li>
+                    <li>✔ Direct contact</li>
+                    <li>✔ No middleman fees</li>
+                </ul>
+            </div>
 
-  <input type="text" name="seller_name" placeholder="Full Name" required>
+            <div class="seller-form" style="color: #333;">
+                <h3>Seller Registration</h3>
+                <form id="sellerRegistration">
+                    <input type="text" id="s-name" placeholder="Business/Name" required>
+                    <input type="tel" id="s-phone" placeholder="Phone" required>
+                    <input type="email" id="s-email" placeholder="Your Email Address" required>
+                    
+                    <select id="s-product" required>
+                        <option value="">Product Category</option>
+                        <option>Fruits</option>
+                        <option>Vegetables</option>
+                        <option>Grains</option>
+                    </select>
 
-  <input type="tel" name="seller_phone" placeholder="Phone Number" required>
+                    <div class="file-box">
+                        <label><strong>Upload Photos/Videos (Proof of Produce)</strong></label>
+                        <input type="file" id="s-files" accept="image/*,video/*" multiple>
+                        <small style="display: block; color: #666; margin-top: 5px;">Note: Files will be sent to email; Text to WhatsApp.</small>
+                    </div>
 
-  <input type="email" name="seller_email" placeholder="Email Address" required>
-
-  <select name="product_category" required>
-    <option value="">Product Category</option>
-    <option>Fruits</option>
-    <option>Vegetables</option>
-    <option>Grains</option>
-    <option>Other Foods</option>
-  </select>
-
-  <textarea name="description" rows="4"
-    placeholder="Describe your produce..."></textarea>
-
-  <label><strong>Upload Photos / Videos</strong></label>
-  <input type="file"
-         name="attachments"
-         accept="image/*,video/*"
-         multiple
-         required>
-
-  <button type="submit" class="submit-btn">
-    Submit Application
-  </button>
-
-</form>
-
-        
-      </div>
+                    <button type="submit" class="submit-btn">Submit to WhatsApp & Email</button>
+                </form>
+            </div>
+        </div>
     </div>
-  </div>
 </section>
 
 <footer>
-  <p>&copy; 2026 K F Fresh Fruits & Foods | Uganda</p>
+    <p>&copy; 2026 K F Fresh Fruits & Foods | Uganda</p>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
 <script>
-(function(){
-  emailjs.init("YOUR_PUBLIC_KEY"); // 🔑 from EmailJS
-})();
+    // 1. Initialize EmailJS (Get your Public Key from EmailJS Dashboard)
+    (function(){
+        emailjs.init("YOUR_PUBLIC_KEY_HERE"); 
+    })();
 
-document.getElementById("sellerRegistration").addEventListener("submit", function(e){
-  e.preventDefault();
+    // CONTACT FORM LOGIC
+    document.getElementById("contactForm").addEventListener("submit", function(e){
+        e.preventDefault();
+        const msg = `NEW ORDER\nName: ${this.name.value}\nPhone: ${this.phone.value}\nLocation: ${this.location.value}\nProduct: ${this.purpose.value}\nDetails: ${this.message.value}`;
+        window.open("https://wa.me/256703535707?text=" + encodeURIComponent(msg), "_blank");
+    });
 
-  const form = this;
+    // SELLER FORM LOGIC (WhatsApp + Email)
+    document.getElementById("sellerRegistration").addEventListener("submit", function(e){
+        e.preventDefault();
+        
+        const name = document.getElementById("s-name").value;
+        const phone = document.getElementById("s-phone").value;
+        const product = document.getElementById("s-product").value;
+        const email = document.getElementById("s-email").value;
+        const fileInput = document.getElementById("s-files");
 
-  const name  = form.seller_name.value;
-  const phone = form.seller_phone.value;
-  const cat   = form.product_category.value;
-  const desc  = form.description.value;
+        // Prepare Email Data
+        const emailParams = {
+            to_email: 'kasambafranco@gmail.com',
+            from_name: name,
+            from_email: email,
+            phone: phone,
+            category: product,
+            message: "Check attachments for produce photos/videos."
+        };
 
-  /* ================= EMAIL (WITH ATTACHMENTS) ================= */
-  emailjs.sendForm(
-    "YOUR_SERVICE_ID",     // EmailJS Service ID
-    "YOUR_TEMPLATE_ID",    // EmailJS Template ID
-    form
-  ).then(function(){
+        // SEND EMAIL (Requires EmailJS Setup)
+        emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', emailParams)
+            .then(() => {
+                alert("Email sent to kasambafranco@gmail.com!");
+            }, (err) => {
+                console.log("Email failed...", err);
+            });
 
-    /* ================= WHATSAPP MESSAGE ================= */
-    const whatsappMsg =
-`NEW SELLER APPLICATION – K F FRESH FRUITS & FOODS
-
-Name: ${name}
-Phone: ${phone}
-Category: ${cat}
-
-Description:
-${desc}
-
-📎 Photos & Videos sent via Email`;
-
-    window.open(
-      "https://wa.me/256703535707?text=" +
-      encodeURIComponent(whatsappMsg),
-      "_blank"
-    );
-
-    alert("✅ Application sent successfully!\n\nAttachments delivered to kasambafranco@gmail.com");
-
-    form.reset();
-
-  }, function(error){
-    console.error(error);
-    alert("❌ Email failed. Please try again.");
-  });
-});
+        // PREPARE WHATSAPP MESSAGE
+        const hasFiles = fileInput.files.length > 0 ? "YES (Sent to Email)" : "NO";
+        const waMsg = `NEW SELLER APPLICATION\n------------------\nName: ${name}\nPhone: ${phone}\nCategory: ${product}\nAttachments: ${hasFiles}\n\nI am sending the photos/videos to your WhatsApp right now.`;
+        
+        window.open("https://wa.me/256703535707?text=" + encodeURIComponent(waMsg), "_blank");
+    });
 </script>
 
-
-
-
-
-
-
-
-
-
-  
 </body>
 </html>
-
-
-
-
-
-
-
-
-
