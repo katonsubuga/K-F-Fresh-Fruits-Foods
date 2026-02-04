@@ -299,8 +299,50 @@
   });
 </script>
 
+
+  /* =====================
+     EMAIL WITH ATTACHMENTS
+  ===================== */
+  emailjs.sendForm(
+    "YOUR_SERVICE_ID",
+    "YOUR_TEMPLATE_ID",
+    form
+  ).then(
+    function(){
+      alert("✅ Application sent successfully via WhatsApp & Email");
+      form.reset();
+    },
+    function(error){
+      alert("Email failed. Try again.");
+      console.error(error);
+    }
+  );
+});
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+(function(){
+  emailjs.init("YOUR_PUBLIC_KEY"); // <-- from EmailJS
+})();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+  
+
 </body>
 </html>
+
 
 
 
