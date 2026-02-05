@@ -379,6 +379,53 @@ loadProducts(cat==="all"?products:products.filter(p=>p.category===cat));
 loadProducts(products);
 </script>
 
+<script>
+/* ===============================
+   AUTO FILTER FROM URL CATEGORY
+================================ */
+
+function getCategoryFromURL() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get("category");
+}
+
+function applyCategoryFilter(category) {
+  if (!category) return;
+
+  // Highlight active button
+  document.querySelectorAll(".filter-btn").forEach(btn => {
+    btn.classList.toggle("active", btn.dataset.category === category);
+  });
+
+  // Filter products
+  const filtered =
+    category === "all"
+      ? products
+      : products.filter(p => p.category === category);
+
+  loadProducts(filtered);
+}
+
+// Run on page load
+window.addEventListener("DOMContentLoaded", () => {
+  const category = getCategoryFromURL();
+  applyCategoryFilter(category);
+
+  // Auto-scroll to prices table if hash exists
+  if (window.location.hash === "#prices") {
+    setTimeout(() => {
+      document.getElementById("prices")?.scrollIntoView({
+        behavior: "smooth"
+      });
+    }, 300);
+  }
+});
+</script>
+
+
+  
+
 </body>
 </html>
+
 
